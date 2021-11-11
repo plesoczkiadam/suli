@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;vm;
+using System.Collections.Genevric;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, e, t, sz;
+            Console.WriteLine("Kérek egy 3 jegyü számot ");
+            a = Convert.ToInt32(Console.ReadLine());
+            sz = a / 100;
+            Console.WriteLine(sz);
+            t = (a / 100) % 10;
+            e = a % 10;
+            if (Math.Pow(sz, 3) + Math.Pow(t, 3) + Math.Pow(e, 3) == a)
+            {
+                Console.WriteLine("A  vizsgált szám amstrong szám");
+
+            }
+            else
+                Console.WriteLine("A vizsgált szám nem Armstrong szám");
+            Console.ReadLine();
+        }
+    }
+}
+using System.Threading.Tasks;using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, e, t, sz;
+            Console.WriteLine("Kérek egy 3 jegyü számot ");
+            a = Convert.ToInt32(Console.ReadLine());
+            sz = a / 100;
+            Console.WriteLine(sz);
+            t = (a / 100) % 10;
+            e = a % 10;
+            if (Math.Pow(sz, 3) + Math.Pow(t, 3) + Math.Pow(e, 3) == a)
+            {
+                Console.WriteLine("A  vizsgált szám amstrong szám");
+
+            }
+            else
+                Console.WriteLine("A vizsgált szám nem Armstrong szám");
+            Console.ReadLine();
+        }
+    }
+}
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, e, t, sz;
+            Console.WriteLine("Kérek egy 3 jegyü számot ");
+            a = Convert.ToInt32(Console.ReadLine());
+            sz = a / 100;
+            Console.WriteLine(sz);
+            t = (a / 100) % 10;
+            e = a % 10;
+            if (Math.Pow(sz, 3) + Math.Pow(t, 3) + Math.Pow(e, 3) == a)
+            {
+                Console.WriteLine("A  vizsgált szám amstrong szám");
+
+            }
+            else
+                Console.WriteLine("A vizsgált szám nem Armstrong szám");
+            Console.ReadLine();
+        }
+    }
+}
