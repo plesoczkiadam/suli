@@ -1,0 +1,101 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace helsinki1952
+{
+    class Program
+    {
+        struct olimpia
+        {
+            public int helyezés;
+            public int sp_szama;
+            public string sp_neve;
+            public string versszam_neve;
+
+        }
+        static void Main(string[] args)
+        {
+            string[] adatok = File.ReadAllLines("helsinki.txt");
+            string[] adatok_uj = new string[adatok.Length];
+            olimpia[] helsol = new olimpia[adatok.Length];
+            for (int i = 0; i < adatok.Length; i++)
+            {
+                string[] sor = adatok[i].Split(' ' );
+                helsol[i].helyezés = Convert.ToInt32(sor[0]);
+                helsol[i].sp_szama = Convert.ToInt32(sor[1]);
+                helsol[i].sp_neve = sor[2];
+                helsol[i].versszam_neve = sor[3];
+
+
+            }
+            Console.WriteLine("3.feladat :");
+            Console.WriteLine("A pontszerző helyezések száma : {0}",adatok.Length);
+
+            Console.WriteLine("4.feladat : ");
+            int adb = 0;
+            int edb = 0;
+            int bdb= 0;
+            int ndb=0;
+            int odb = 0;
+            int hdb = 0;
+            for (int i = 0; i< adatok.Length; i++)
+            {
+                switch (helsol[i].helyezés)
+                {
+                    case 1: { adb++; break; }
+                    case 2: { edb++; break; }
+                    case 3: { bdb++; break; }
+                    case 4: { ndb++; break; }
+                    case 5: { odb++; break; }
+                    case 6: { hdb++; break; }
+                   
+                }
+            }
+            Console.WriteLine("arany : {0}",adb);
+            Console.WriteLine("ezüst : {0}", edb);
+            Console.WriteLine("bronz  : {0}", bdb);
+            Console.WriteLine("összesen: {0}", adb+edb+bdb);
+
+            Console.WriteLine("5.feladat");
+            int osszpont = adb * 7 + edb * 5 + bdb * 4 + ndb * 3 + odb * 2 + hdb;
+            Console.WriteLine("Olompiai pontok száma: {0}",osszpont);
+
+            Console.WriteLine("6.feladat");
+            int uszas_db = 0;
+            int torna_db = 0;
+            for (int i = 0; i < adatok.Length; i++)
+            {
+                if (helsol[i].helyezés < 4)
+                {
+                    switch (helsol[i].sp_neve)
+                    {
+                        case "uszas":uszas_db = uszas_db + helsol[i].helyezés ;break;
+                        case "torna":torna_db = torna_db + helsol[i].helyezés ;break;
+                }
+                }
+
+            }if (uszas_db < torna_db)
+            {
+                Console.WriteLine("Torna sportágban szereztek több érmet.");
+
+            }
+            else
+            {
+                if (uszas_db == torna_db)
+                    Console.WriteLine("Egyenlő volt az érmék száma.");
+                else
+                    Console.WriteLine("Úszás sportágban szereztek több érmet .");
+            }
+            Console.WriteLine("");
+
+
+
+
+            Console.ReadLine();
+        }
+    }
+}
