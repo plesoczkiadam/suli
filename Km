@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, km;
+            Console.WriteLine("Adja meg hány kilométert szeretne menni");
+            Console.WriteLine("megteendő ut: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("fogyasztás");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(" fogyasztás");
+            km = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("kilométer");
+            if (a * 100 / b > km)
+            {
+                Console.WriteLine("Nem kell tankolni az autot");
+            }
+            else
+            {
+                Console.WriteLine("kell tankolni");
+            }
+            Console.ReadLine();
+
+        }
+    }
+}
