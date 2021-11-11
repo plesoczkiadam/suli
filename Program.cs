@@ -4,48 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace ConsoleApp1
 {
     class Program
     {
-        private const int n =30;
-        static int[] a = new int[n];
-
-        static void generalas()
-        {
-            Random rnd = new Random();
-            for (int i = 0; i < n; i++)
-            {
-                a[i] = rnd.Next(-50, 51);
-            }
-        }
-        static void kiir()
-        {
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(a[i] + " ");
-            }
-        }
-        static void beillesztrendez()
-        {
-            for (int i = 1; i < n; i++)
-            {
-                int j = i - 1;
-                int x = a[i];
-                while ((j > -1) && (x < a[j]))
-                {
-                    a[j + 1] = a[j];
-
-                }
-            }
-        }
-
         static void Main(string[] args)
         {
-            generalas();
-            kiir();
-            beillesztrendez();
-            kiir();
+            int a , max, min, i;
+            a = 7;
+            max = 0;
+            min = 0;
+            int[] t = new int[a];
+            for (i = 0; i < a; i++)
+            {
+                t[i] = Convert.ToInt32(Console.ReadLine());
+                max = t[0];
+                if (max < t[i])
+                {
+                    max = t[i];
+                }
+                min = t[i];
+                if (min > t[i])
+                {
+                    min = t[i];
+                }
+            }
+            Console.WriteLine("{0}° volt a hőingás ");
             Console.ReadLine();
         }
     }
