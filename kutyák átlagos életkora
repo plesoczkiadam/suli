@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        public struct kutya
+        {
+            public string fajta;
+            public string nem;
+            public byte eletkor;
+            public string nev;
+        }
+        static void Main(string[] args)
+        {
+            List<kutya> kutyak = new List<kutya>();
+            FileStream fs = new FileStream("kutyak.txt", FileMode.Open);
+            StreamReader sr = new StreamReader(fs, Encoding.UTF8);
+            string sor = "";
+            while (!sr.EndOfStream)
+            {
+                sor = sr.ReadLine();
+                string[] darabok = sor.Split(';');
+                kutya k = new kutya();
+                k.fajta = darabok[0];
+                k.nem = darabok[1];
+                k.eletkor = Convert.ToByte(darabok[2]);
+                k.nev = darabok[3];
+                kutyak.Add(k);
+
+
+            }
+            sr.Close();
+            fs.Close();
+            Console.WriteLine("A kutyák neve: ");
+            foreach (kutya elem in kutyak)
+            {
+                Console.WriteLine(elem.nev);
+            }
+            int eletkorosszeg = 0;
+            for (int i = 0; i < kutyak.Count; i++)
+            {
+                eletkorosszeg += kutyak[i].eletkor; 
+            }
+            double eletkoratlag = (double)eletkorosszeg / kutyak.Count;
+            Console.WriteLine("A kutyák átlagos életkora : " + Math.Round(eletkoratlag,2));
+            Console.ReadKey();
+
+        }
+    }
+}
