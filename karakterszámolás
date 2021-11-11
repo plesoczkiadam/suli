@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string sz;
+            int i, db;
+            db = 0;
+            Console.WriteLine("Kérek egy max 100 karakterből állo szöveget");
+            sz = Console.ReadLine();
+            if (sz[0] != ' ') db++;
+            for (i = 0; i < sz.length - 1; i++)
+            {
+                if ((sz[i] == ' ') && (sz[i] + 1 != ' ')) db++;
+                    
+            }
+            Console.WriteLine("A megadott szövegben {0} db szó  van",db);
+            Console.ReadLine();
+
+        }
+    }
+}
